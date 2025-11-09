@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索非表示設定 -->
+    <meta name="robots" content="noindex">
+    <title>Document</title>
+    <!-- フォント設定 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- スライダー設定 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- slick設定 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+    <!-- css設定 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header id="js-header-content" class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="index.html"><img id="site-logo"
+                        src="./img/site-logo-b.png"
+                        data-src-default="./img/site-logo-b.png"
+                        data-src-checked="./img/site-logo-w.png"
+                        alt="みなみ歯科クリニック">
+                </a>
+            </h1>
+            <nav class="header__nav">
+                <a href="index.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g1.png"
+                    data-src-default="./img/icon-g1.png"
+                    data-src-checked="./img/icon-b1.png"
+                    alt="">
+                  ホーム
+                </a>
+                <a href="about.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g2.png"
+                    data-src-default="./img/icon-g2.png"
+                    data-src-checked="./img/icon-b2.png"
+                    alt="">
+                  当院について
+                </a>
+                <a href="medical.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g3.png"
+                    data-src-default="./img/icon-g3.png"
+                    data-src-checked="./img/icon-b3.png"
+                    alt="">
+                  診療案内
+                </a>
+                <a href="staff.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g4.png"
+                    data-src-default="./img/icon-g4.png"
+                    data-src-checked="./img/icon-b4.png"
+                    alt="">
+                  スタッフ紹介
+                </a>
+                <a href="blog.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g5.png"
+                    data-src-default="./img/icon-g5.png"
+                    data-src-checked="./img/icon-b5.png"
+                    alt="">
+                  スタッフブログ
+                </a>
+                <a href="contact.html" class="header__link">
+                  <img
+                    class="nav-icon"
+                    src="./img/icon-g6.png"
+                    data-src-default="./img/icon-g6.png"
+                    data-src-checked="./img/icon-b6.png"
+                    alt="">
+                  お問い合わせ
+                </a>
+                <div class="header__contact">
+                  <div class="header__address">〒166-0001 東京都杉並区阿佐ヶ谷北7-3-1</div>
+                  <a href="" class="header__tel"><img src="./img/tell-icon.png" alt=""></a>
+                </div>
+            </nav>
+            <button id="js-draw-icon" class="header__open draw-icon">
+                <span class="draw-icon__bar"></span>
+                <span class="draw-icon__bar"></span>
+                <span class="draw-icon__bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ドロワーメニュー -->
+    <div id="js-draw-content" class="drawer-content">
+        <h1 class="drawer-content__logo">
+            <a href="index.html"><img src="./img/site-logo-2.png" alt="みなみ歯科クリニック"></a>
+        </h1>
+        <nav class="drawer-content__menu">
+            <a href="index.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w1.png" alt="">ホーム</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            <a href="about.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w2.png" alt="">当院について</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            <a href="medical.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w3.png" alt="">診療案内</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            <a href="staff.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w4.png" alt="">スタッフ紹介</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            <a href="blog.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w5.png" alt="">スタッフブログ</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            <a href="contact.html" class="drawer-content__link">
+              <div class="drawer-content-icon"><img src="./img/icon-w6.png" alt="">お問い合わせ</div>
+              <span class="drawer-content__arrow" aria-hidden="true">
+                <!-- 横線＋矢印（stroke: currentColor） -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h12"></path>
+                  <path d="M12 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- 追従 -->
+    <div id="js-fixed-content" class="fixed-content">
+        <a href="" class="fixed-content__tel"><img src="./img/tell-icon.png" alt="">(年中無休 AM9:00〜PM22:00)</a>
+        <a href="reserve.html" class="fixed-content__btn">
+            <img src="./img/icon-pc.png" alt="">
+            <p>WEB予約<span>はこちら</span></p>
+        </a>
+    </div>
+
+    <!-- reserve-card-btn -->
+    <div class="reserve-card__btn" type="button">
+        <a href="reserve.html" class="btn">
+            <span class="reserve-card-btn__icon" aria-hidden="true">
+                <img src="./img/icon-pc.png" alt="">
+            </span>
+            <span class="reserve-card-btn__text">
+                WEB予約<br>はこちら
+            </span>
+        </a>
+    </div>
+
+    <main>
+      <!-- トップビュー -->
+      <section id="tv">
+        <div class="wrapper">
+          <div class="tv__image">
+            <img src="./img/page-archive_top.png" alt="">
+          </div>
+          <div class="tv__title">
+            <h1 class="tv__title-ja">スタッフブログ</h1>
+            <p class="tv__title-en">STAFF BLOG</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- パンくずリスト -->
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <div class="wrapper">
+        <li itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="index.html">
+              <span itemprop="name">ホーム</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+
+        <li itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="blog.html">
+              <span itemprop="name">スタッフブログ</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        </div>
+      </ol>
+
+      <!-- ブログ -->
+      <section id="blog-page">
+        <div class="wrapper">
+          <div class="content">
+            <div class="archive">
+              <div class="items">
+                <a href="" class="item">
+                  <div class="image">
+                    <img src="./img/blog-item__image-10.png" alt="">
+                  </div>
+                  <div class="body">
+                    <p class="category">歯科コラム</p>
+                    <h3 class="title">歯周病と虫歯の違いを詳しく解説</h3>
+                    <time class="published" datetime="">2024.12.12</time>
+                  </div>
+                </a>
+                <a href="" class="item">
+                  <div class="image">
+                    <img src="./img/blog-item__image-11.png" alt="">
+                  </div>
+                  <div class="body">
+                    <p class="category">歯科コラム</p>
+                    <h3 class="title">知っておきたい！矯正治療のメリットとデメリット</h3>
+                    <time class="published" datetime="">2024.07.29</time>
+                  </div>
+                </a>
+              </div>
+
+              <!-- ページネーション -->
+              <div class='pagenavi' role='navigation'>
+                <a class="previouspostslink" rel="prev" aria-label="次のページ" href="blog.html">前へ</a>
+                <a class="page larger" title="ページ 1" href="blog.html">1</a>
+                <span aria-current='page' class='current'>2</span>
+              </div>
+            </div>
+            
+            <!-- サイドバー -->
+            <aside class="sidebar">
+              <div class="clinic">
+                <h2 class="heading">
+                  <img src="./img/icon-g2.png" alt="">クリニックの紹介
+                </h2>
+                <div class="image">
+                  <img src="./img/sidebar-img_1.png" alt="">
+                </div>
+                <div class="body">
+                  <h3 class="subTitle">
+                    みなみ歯科クリニック
+                  </h3>
+                  <div class="text">
+                    お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
+                  </div>
+                  <a href="about.html">当院について</a>
+                </div>
+              </div>
+              <div class="article">
+                <h2 class="heading">
+                  <img src="./img/icon-g7.png" alt="">新着記事
+                </h2>
+
+                <div class="items">
+                  <a href="" class="item">
+                    <div class="image">
+                      <img src="./img/blog-item__image-1.png" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="category">歯科コラム</p>
+                      <h3 class="title">歯周病と虫歯の違いを詳しく解説</h3>
+                      <time class="published" datetime="">2020.02.14</time>
+                    </div>
+                  </a>
+                  <a href="" class="item">
+                    <div class="image">
+                      <img src="./img/blog-item__image-2.png" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="category">患者様の声</p>
+                      <h3 class="title">インプラント治療で噛む力が戻った！実際の体験談（50代女性）</h3>
+                      <time class="published" datetime="">2024.12.02</time>
+                    </div>
+                  </a>
+                  <a href="" class="item">
+                    <div class="image">
+                      <img src="./img/blog-item__image-3.png" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="category">小児歯科</p>
+                      <h3 class="title">子どもの歯の健康を守るために知っておきたい！年齢別に見る最適な歯磨きの方法と正しいケアのタイミング、親が実践すべき注意点とは</h3>
+                      <time class="published" datetime="">2024.11.22</time>
+                    </div>
+                  </a>
+                  <a href="" class="item">
+                    <div class="image">
+                      <img src="./img/blog-item__image-4.png" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="category">歯科コラム</p>
+                      <h3 class="title">インプラントとブリッジの違いとは？どちらが最適？</h3>
+                      <time class="published" datetime="">2024.11.10</time>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="category">
+                <h2 class="heading">
+                  <img src="./img/icon-g8.png" alt="">カテゴリー
+                </h2>
+                <ul class="lists">
+                  <li class="list">
+                    <a href="">歯科コラム</a>
+                  </li>
+                  <li class="list">
+                    <a href="">患者様の声</a>
+                  </li>
+                  <li class="list">
+                    <a href="">小児歯科</a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ページトップボタン -->
+      <div class="pageTop__btn">
+        <a href="#"><img src="./img/page-top.png" alt=""></a>
+      </div>
+    </main>
+
+    <!-- フッター -->
+    <footer id="footer">
+      <div class="footer__bg-top"></div>
+      <div class="footer__main">
+        <div class="footer-brand">
+          <div class="footer-brand-left">
+            <h2 class="footer__logo">
+              <a href="index.html"><img src="./img/site-logo-b.png" width="309" height="37" alt="みなみ歯科クリニック"></a>
+              <p class="footer__address">〒166-0001 東京都杉並区阿佐ヶ谷北7-3-1</p>
+            </h2>
+            <a href="tel:0312345678" class="footer__tel"><img src="./img/tell-icon.png" alt="">(年中無休 AM9:00〜PM22:00)</a>
+            <div class="footer-btn">
+              <div class="reserve__btn">
+                <a href="reserve.html" class="btn">
+                  <img src="./img/icon-pc.png" alt="">
+                  WEB予約
+                </a>
+              </div>
+              <div class="contact__btn">
+                <a href="contact.html" class="btn">
+                  <img src="./img/icon-b6.png" alt="">
+                  <img src="./img/icon-w6.png" alt="">
+                  お問い合わせ
+                </a>
+              </div>
+            </div>
+            <!-- 診療時間 -->
+            <div class="tbl-time__wrapper">
+                <table class="tbl-time">
+                    <thead>
+                        <tr>
+                          <th>診療時間</th>
+                          <th>月</th>
+                          <th>火</th>
+                          <th>水</th>
+                          <th>木</th>
+                          <th>金</th>
+                          <th class="sat">土</th>
+                          <th class="sun">日</th>
+                          <th class="sun">祝</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>9:00 ~ 12:00</th>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>／</td>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>／</td>
+                          <td>／</td>
+                        </tr>
+                        <tr>
+                          <th>13:00 ~ 22:00</th>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>／</td>
+                          <td>●</td>
+                          <td>●</td>
+                          <td>／</td>
+                          <td>／</td>
+                        </tr>
+                      </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="footer-brand-right">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6479.2601278018265!2d139.6311020941862!3d35.710720090310666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ed89400bb025%3A0xe163fbc6ba8a0d1c!2z44CSMTY2LTAwMDEg5p2x5Lqs6YO95p2J5Lim5Yy66Zi_5L2Q6LC35YyX!5e0!3m2!1sja!2sjp!4v1756483198161!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-nav__title">TOP</a>
+          <div class="footer-nav__menu">
+            <a href="about.html" class="footer-nav__menu-title">当院について</a>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__link"><a href="about.html#policy">ポリシーと特徴</a></li>
+              <li class="footer-nav__link"><a href="about.html#condition">当院の様子</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav__menu">
+            <a href="staff.html" class="footer-nav__menu-title">スタッフ紹介</a>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__link"><a href="staff.html#greetings">院長のあいさつ</a></li>
+              <li class="footer-nav__link"><a href="staff.html#introductions">スタッフ</a></li>
+              <li class="footer-nav__link"><a href="blog.html">スタッフブログ</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav__menu">
+            <a href="medical.html" class="footer-nav__menu-title">診療内容</a>
+            <ul class="footer-nav__lists">
+              <div class="footer-nav__list">
+                <li class="footer-nav__link"><a href="medical.html#general-1">一般歯科</a></li>
+                <li class="footer-nav__link"><a href="medical.html#general-2">小児歯科</a></li>
+                <li class="footer-nav__link"><a href="medical.html#general-3">予防歯科</a></li>
+              </div>
+              <div class="footer-nav__list">
+                <li class="footer-nav__link"><a href="medical.html#special-1">入れ歯</a></li>
+                <li class="footer-nav__link"><a href="medical.html#special-2">矯正歯科</a></li>
+                <li class="footer-nav__link"><a href="medical.html#special-3">ホワイトニング</a></li>
+                <li class="footer-nav__link"><a href="medical.html#special-4">口腔外科</a></li>
+                <li class="footer-nav__link"><a href="medical.html#special-5">レーザー治療</a></li>
+              </div>
+            </ul>
+          </div>
+          <div class="footer-nav__menu">
+            <a href="contact.html" class="footer-nav__menu-title">お問い合わせ</a>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__link"><a href="contact.html">お問い合わせフォーム</a></li>
+              <li class="footer-nav__link"><a href="reserve.html">WEB予約</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__copyright">
+        <small>©︎2020-2021 みなみ歯科クリニック</small>
+      </div>
+    </footer>
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/script.js"></script>
+</html>

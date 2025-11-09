@@ -1,0 +1,431 @@
+// カラー設定
+    // テキストカラー
+    $text-color1: #393939;
+    $text-color2: #fff;
+    $text-color3: #888;
+    // カラー
+    $main-color: #1391E6;
+    $main-color-light: #DFF1FD;
+    $main-color-dark: #0060A0;
+    $accent-color: #EE5A6D;
+
+// ブレークポイント
+$breakpoints: (
+  sp: "screen and (max-width: 767px)",
+  // padding: 0 20px;
+  tb: "screen and (min-width: 768px)",
+  // padding: 0 40px;
+  pc: "screen and (min-width: 1024px)",
+  // padding: 0 60px;
+  pcl: "screen and (min-width: 1280px)",
+) !default;
+
+@use "sass:map";
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*-------------------------------------------
+medicalページ
+-------------------------------------------*/
+// ナビゲーション
+#nav {
+  .wrapper {
+    .top {
+      margin-bottom: 8rem;
+    }
+
+    .bottom {
+    }
+
+    .title {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+
+      .mainTitle {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .sabTitle {
+        padding: 0.7rem 1.2rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.5;
+        background-color: $main-color;
+        color: $text-color2;
+        border-radius: 24px;
+      }
+
+      .bottom__subTitle {
+        background-color: $accent-color;
+      }
+    }
+
+    .items {
+      display: block;
+      margin-top: 2.9rem;
+      align-items: center;
+
+      @include mq(tb) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+      }
+
+      .item {
+        margin-bottom: 16px;
+        text-align: center;
+        border: 1px solid $main-color;
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: $main-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include mq(tb) {
+          padding: 1.8rem 3.2rem;
+        }
+
+        &:hover {
+          background-color: $main-color-light;
+        }
+      }
+    }
+  }
+}
+
+// 一般診療
+#general {
+  margin-bottom: 10rem;
+
+  @include mq(tb) {
+    margin-bottom: 12rem;
+  }
+
+  .bg-top {
+    height: calc(88px * (100vw / 375px));
+    width: 100%;
+    background-image: url("../img/bg-top-sp.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100vw auto;
+
+    @include mq(tb) {
+      background-image: url("../img/bg-top-pc.png");
+      height: calc(203px * (100vw / 1200px));
+      background-size: 100vw auto;
+    }
+  }
+
+  .bg-main {
+    background: $main-color-light;
+  }
+
+  .bg-bottom {
+    height: calc(82px * (100vw / 375px));
+    width: 100%;
+    background-image: url("../img/bg-bottom-sp.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100vw auto;
+
+    @include mq(tb) {
+      background-image: url("../img/bg-bottom-pc.png");
+      height: calc(214px * (100vw / 1200px));
+      background-size: 100vw auto;
+    }
+  }
+
+  .wrapper {
+    padding-bottom: 1rem;
+    max-width: 1060px;
+    margin: 0 auto;
+
+    .items{
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      @include mq(tb) {
+        margin-top: 6rem;
+      }
+
+      .item {
+        background: $text-color2;
+        border-radius: 20px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: relative;
+
+        @include mq(tb) {
+          padding: 6rem;
+        }
+
+        .titleWrap {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding-bottom: 1.9rem;
+          border-bottom: 1px solid #c2c2c2;
+
+          @include mq(tb) {
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            padding-bottom: 3.6rem;
+          }
+
+          .title {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: 0.08em;
+
+            @include mq(tb) {
+              font-size: 2.8rem;
+            }
+          }
+
+          .subTitle {
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: 0.08em;
+            color: $main-color;
+          }
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1.6rem;
+          margin-top: 1.6rem;
+
+          @include mq(tb) {
+            flex-direction: row;
+            margin-top: 3.5rem;
+          }
+
+          .textWrap {
+            width: 100%;
+            border-radius: 20px;
+
+            @include mq(tb) {
+              width: 50%;
+            }
+          }
+
+          .imgWrap {
+            overflow: hidden;
+            border-radius: 20px;
+
+            @include mq(tb) {
+              width: 50%;
+            }
+
+            .tag-sp {
+              position: absolute;
+              top: 0;
+              right: 20px;
+              width: 80px;
+              height: 60px;
+
+              @include mq(tb) {
+                display: none;
+              }
+            }
+
+            .tag-pc {
+              display: none;
+
+              @include mq(tb) {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 60px;
+                width: 100px;
+                height: 80px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 特殊診療
+#special {
+  margin-bottom: 10rem;
+
+  @include mq(tb) {
+    margin-bottom: 12rem;
+  }
+
+  .bg-top {
+    height: calc(88px * (100vw / 375px));
+    width: 100%;
+    background-image: url("../img/bg-top-sp.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100vw auto;
+
+    @include mq(tb) {
+      background-image: url("../img/bg-top-pc.png");
+      height: calc(203px * (100vw / 1200px));
+      background-size: 100vw auto;
+    }
+  }
+
+  .bg-main {
+    background: $main-color-light;
+  }
+
+  .bg-bottom {
+    height: calc(82px * (100vw / 375px));
+    width: 100%;
+    background-image: url("../img/bg-bottom-sp.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100vw auto;
+
+    @include mq(tb) {
+      background-image: url("../img/bg-bottom-pc.png");
+      height: calc(214px * (100vw / 1200px));
+      background-size: 100vw auto;
+    }
+  }
+
+  .wrapper {
+    padding-bottom: 1rem;
+    max-width: 1060px;
+    margin: 0 auto;
+
+    .items{
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      @include mq(tb) {
+        margin-top: 6rem;
+      }
+
+      .item {
+        background: $text-color2;
+        border-radius: 20px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: relative;
+
+        @include mq(tb) {
+          padding: 6rem;
+        }
+
+        .titleWrap {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding-bottom: 1.9rem;
+          border-bottom: 1px solid #c2c2c2;
+
+          @include mq(tb) {
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            padding-bottom: 3.6rem;
+          }
+
+          .title {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: 0.08em;
+
+            @include mq(tb) {
+              font-size: 2.8rem;
+            }
+          }
+
+          .subTitle {
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: 0.08em;
+            color: $main-color;
+          }
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1.6rem;
+          margin-top: 1.6rem;
+
+          @include mq(tb) {
+            flex-direction: row;
+            margin-top: 3.5rem;
+          }
+
+          .textWrap {
+            width: 100%;
+            border-radius: 20px;
+
+            @include mq(tb) {
+              width: 50%;
+            }
+          }
+
+          .imgWrap {
+            overflow: hidden;
+            border-radius: 20px;
+
+            @include mq(tb) {
+              width: 50%;
+            }
+
+            .tag-sp {
+              position: absolute;
+              top: 0;
+              right: 20px;
+              width: 80px;
+              height: 60px;
+
+              @include mq(tb) {
+                display: none;
+              }
+            }
+
+            .tag-pc {
+              display: none;
+
+              @include mq(tb) {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 60px;
+                width: 100px;
+                height: 80px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

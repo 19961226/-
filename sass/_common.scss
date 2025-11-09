@@ -1,0 +1,70 @@
+// カラー設定
+    // テキストカラー
+    $text-color1: #393939;
+    $text-color2: #fff;
+    $text-color3: #888;
+    // カラー
+    $main-color: #1391E6;
+    $main-color-light: #DFF1FD;
+    $main-color-dark: #0060A0;
+    $accent-color: #EE5A6D;
+
+// ブレークポイント
+$breakpoints: (
+  sp: "screen and (max-width: 767px)",
+  // padding: 0 20px;
+  tb: "screen and (min-width: 768px)",
+  // padding: 0 40px;
+  pc: "screen and (min-width: 1024px)",
+  // padding: 0 60px;
+  pcl: "screen and (min-width: 1280px)",
+) !default;
+
+@use "sass:map";
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// 共通
+html {
+  font-family: "Rounded Mplus 1c";
+  font-size: 62.5%;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 150px;
+}
+
+body {
+  font-size: 1.4rem;
+  color: $text-color1;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  padding: 0 2rem 10rem 2rem;
+
+  @include mq(tb) {
+    padding: 0 4rem 10rem 4rem;
+  }
+
+
+  @include mq(pc) {
+    padding: 0 6rem 10rem 6rem;
+  }
+
+}

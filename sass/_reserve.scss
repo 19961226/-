@@ -1,0 +1,93 @@
+// カラー設定
+    // テキストカラー
+    $text-color1: #393939;
+    $text-color2: #fff;
+    $text-color3: #888;
+    // カラー
+    $main-color: #1391E6;
+    $main-color-light: #DFF1FD;
+    $main-color-dark: #0060A0;
+    $accent-color: #EE5A6D;
+
+// ブレークポイント
+$breakpoints: (
+  sp: "screen and (max-width: 767px)",
+  // padding: 0 20px;
+  tb: "screen and (min-width: 768px)",
+  // padding: 0 40px;
+  pc: "screen and (min-width: 1024px)",
+  // padding: 0 60px;
+  pcl: "screen and (min-width: 1280px)",
+) !default;
+
+@use "sass:map";
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*-------------------------------------------
+reserveページ
+-------------------------------------------*/
+// WEB予約
+#reserve {
+  max-width: 1060px;
+  margin: 0 auto;
+
+  .info {
+    width: 100%;
+    max-width: 728px;
+    margin: auto;
+
+    &:nth-child(2) {
+      margin-top: 4rem;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+
+      @include mq(tb) {
+        font-size: 2.8rem;
+      }
+    }
+
+    .tel__box {
+      display: inline-block;
+      margin-top: 24px;
+      text-align: center;
+
+      .tel__btn {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        width: 300px;
+        font-weight: bold;
+        line-height: 1.3;
+        color: $main-color;
+      }
+    }
+
+    .text {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .sec-titleWrap {
+    margin-top: 10rem;
+  }
+
+  .text {
+    max-width: 728px;
+    margin: auto;
+    line-height: 1.7;
+
+    .text-red {
+      color: $accent-color;
+    }
+  }
+}
+

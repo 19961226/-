@@ -1,0 +1,207 @@
+// カラー設定
+    // テキストカラー
+    $text-color1: #393939;
+    $text-color2: #fff;
+    $text-color3: #888;
+    // カラー
+    $main-color: #1391E6;
+    $main-color-light: #DFF1FD;
+    $main-color-dark: #0060A0;
+    $accent-color: #EE5A6D;
+
+// ブレークポイント
+$breakpoints: (
+  sp: "screen and (max-width: 767px)",
+  // padding: 0 20px;
+  tb: "screen and (min-width: 768px)",
+  // padding: 0 40px;
+  pc: "screen and (min-width: 1024px)",
+  // padding: 0 60px;
+  pcl: "screen and (min-width: 1280px)",
+) !default;
+
+@use "sass:map";
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*-------------------------------------------
+news-individualページ
+-------------------------------------------*/
+// お知らせ
+#news-individual {
+  max-width: 1060px;
+  margin: 0 auto;
+
+  .content {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10rem;
+
+    @include mq(tb) {
+      grid-template-columns: 1fr 300px;
+      gap: 3%;
+    }
+
+    .individual__article {
+
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      .meta {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        img {
+          width: 14px;
+          height: 14px;
+          margin-right: 1rem;
+        }
+
+        time {
+          position: relative;
+          font-size: 1.6rem;
+          color: $main-color;
+          margin-right: 3.2rem;
+        }
+
+        .category {
+          width: fit-content;
+          padding: 6px 12px;
+          font-size: 11px;
+          line-height: 1.5;
+          color: #fff;
+          text-align: center;
+          background-color: $main-color;
+          border-radius: 999px;
+        }
+      }
+
+      .body {
+        margin-top: 4rem;
+
+        h2 {
+          font-size: 1.8rem;
+          font-weight: bold;
+          line-height: 1.5;
+          color: $main-color;
+          padding-left: 1.6rem;
+          border-left: 6px solid $main-color;
+        }
+
+        h3 {
+          margin-top: 29px;
+          padding-bottom: 4px;
+          font-size: 1.6rem;
+          border-bottom: 1px solid $main-color;
+          color: $main-color;
+          font-weight: bold;
+        }
+
+        h4 {
+          margin-top: 29px;
+          color: $main-color;
+          font-weight: bold;
+        }
+
+        p {
+          margin-top: 14px;
+
+          a {
+            color: #1391e6;
+            text-decoration: underline;
+          }
+        }
+
+
+        ul {
+          margin-left: 1.5em;
+          list-style-type: disc;
+        }
+
+        ol {
+          margin-left: 1.5em;
+          list-style-type: decimal;
+        }
+      }
+    }
+
+    .pagenavi {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      clear: both;
+      margin-top: 41px;
+
+      a, span {
+        display: grid;
+        place-content: center;
+        margin: 0;
+        color: $main-color;
+        text-align: center;
+        white-space: nowrap;
+        background-color: $text-color2;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        padding: 0.3rem 0.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.1rem;
+        transition: 0.4s ease-in-out;
+
+        @include mq(tb) {
+          width: 3.6rem;
+          height: 3.6rem;
+          font-size: 1.4rem;
+        }
+      }
+
+      .current {
+        color: $text-color2;
+        background-color: $main-color;
+        font-weight: bold;
+      }
+
+      .previouspostslink {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-end;
+        width: 120px;
+        padding-right: 1.3rem;
+        background-size: 1.3rem 1.3rem;
+        color: $text-color2;
+        background-color: $main-color;
+        background-image: url(../img/arrow-circle-left.png);
+        background-repeat: no-repeat;
+        background-position: left 1.4rem center;
+        transition: 0.3s ease;
+
+        @include mq(tb) {
+          min-width: 8.2rem;
+          padding-right: 1.5rem;
+          background-size: 1.3rem 1.3rem;
+        }
+      }
+
+      .page {
+        width: 120px;
+      }
+
+      .page:hover {
+        color: $text-color2;
+        background-color: $main-color;
+      }
+
+      .previouspostslink:hover {
+        background-position: left 1rem center;
+      }
+    }
+  }
+}
+
